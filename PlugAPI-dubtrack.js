@@ -20,12 +20,17 @@ var API = {
 	},
 	
 	chatLog : function(txt){
+		var b = new Dubtrack.View.chatLoadingItem;
 		b.$el.text(txt).appendTo(Dubtrack.room.chat._messagesEl);
 	},
 	
 	sendChat : function(txt){
 		Dubtrack.room.chat._messageInputEl.val(txt);
         Dubtrack.room.chat.sendMessage();
+	},
+	
+	showPopup : function(title, message){
+		Dubtrack.helpers.displayError(title, message);
 	},
 	
 	on : {
